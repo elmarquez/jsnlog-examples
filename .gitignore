@@ -1,0 +1,10 @@
+*~
+*.gz
+*.tar
+*.zip
+
+.idea
+atlassian-ide-plugin.xml
+bower_components
+node_modules
+public/js/**/*

@@ -1,0 +1,31 @@
+{
+  "name": "logger",
+  "version": "0.0.1",
+  "homepage": "https://github.com/elmarquez/jsnlog-examples",
+  "authors": [
+    "Davis Marques <dmarques@unimelb.edu.au>"
+  ],
+  "description": "JSNLog Examples",
+  "main": "bin/www",
+  "moduleType": [
+    "node"
+  ],
+  "keywords": [
+    "jsnlog",
+    "client",
+    "log",
+    "logging"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.2.25",
+    "jsnlog": "~2.7.5"
+  }
+}
