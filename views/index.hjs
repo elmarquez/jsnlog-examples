@@ -5,7 +5,10 @@
     <link rel='stylesheet' href='/css/style.css' />
     <script type="text/javascript">
         var __jsnlog_configure = function () {
-            JL.setOptions({"defaultAjaxUrl": "/log"});
+            JL.setOptions({"defaultAjaxUrl": "/log",
+                            level: JL.getErrorLevel(),
+                            requestId: "35F7416D-86F1-47FA-A9EC-547FFF510086"
+            });
         };
     </script>
     <script src='/js/jsnlog/jsnlog.js'></script>
@@ -31,7 +34,7 @@
             try {
                 doesnotexist();
             } catch (e) {
-                JL().debug({msg: "Debug message", errorMsg: e});
+                JL().debug({msg: "Debug message", errorMsg: e.message});
             }
         };
 
@@ -39,7 +42,7 @@
             try {
                 doesnotexist();
             } catch (e) {
-                JL().fatal({msg: "Fatal message", errorMsg: e});
+                JL().fatal({msg: "Fatal message", errorMsg: e.message});
             }
         };
 
@@ -47,7 +50,7 @@
             try {
                 doesnotexist();
             } catch (e) {
-                JL().info({msg: "Info message", errorMsg: e});
+                JL().info({msg: "Info message", errorMsg: e.message});
             }
         };
 
@@ -55,7 +58,7 @@
             try {
                 doesnotexist();
             } catch (e) {
-                JL().trace({msg: "Trace message", errorMsg: e});
+                JL().trace({msg: "Trace message", errorMsg: e.message});
             }
         };
 
@@ -63,7 +66,7 @@
             try {
                 doesnotexist();
             } catch (e) {
-                JL().warn({msg: "Warn message", errorMsg: e});
+                JL().warn({msg: "Warn message", errorMsg: e.message});
             }
         };
 
