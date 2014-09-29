@@ -3,7 +3,13 @@
   <head>
     <title>JSNLog Test</title>
     <link rel='stylesheet' href='/css/style.css' />
-    <script src='/js/jsnlog-2.7.4/jsnlog.min.js'></script>
+    <script type="text/javascript">
+        var __jsnlog_configure = function () {
+            JL.setOptions({"defaultAjaxUrl": "/log"});
+        };
+    </script>
+    <script src='/js/jsnlog/jsnlog.js'></script>
+    <script src='/js/node-uuid/uuid.js'></script>
   </head>
   <body>
       <div class="container">
@@ -18,42 +24,47 @@
           </table>
       </div>
       <script type="text/javascript">
-        // configure client logging
-        var __jsnlog_configure = function () {
-            // fetch the logging configuration from the remote server
-            console.log('@@@@@@@@@@@@@@@@ logging configured 2');
-            // does not appear to be working!
-            JL().setOptions({
-                defaultAjaxUrl: "http://localhost:3000/log",
-                level: JL.getInfoLevel(),
-                requestId: 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {var r = Math.random()*16|0,v=c=='x'?r:r&0x3|0x8;return v.toString(16);})
-            });
-        };
-
-        JL().setOptions({
-            defaultAjaxUrl: "http://localhost:3000/log",
-            // level: JL.getInfoLevel(),
-            requestId: "35F7416D-86F1-47FA-A9EC-547FFF510086"
-        });
+        // try { __jsnlog_configure(); } catch(e) {};
+        // JL.setOptions({ defaultAjaxUrl: "http://localhost:3000/log", requestId: uuid.v1() });
 
         var log_debug = function () {
-            JL().debug("Debug message");
+            try {
+                doesnotexist();
+            } catch (e) {
+                JL().debug({msg: "Debug message", errorMsg: e});
+            }
         };
 
         var log_fatal = function () {
-            JL().fatal("Fatal message");
+            try {
+                doesnotexist();
+            } catch (e) {
+                JL().fatal({msg: "Fatal message", errorMsg: e});
+            }
         };
 
         var log_info = function () {
-            JL().info("Info message");
+            try {
+                doesnotexist();
+            } catch (e) {
+                JL().info({msg: "Info message", errorMsg: e});
+            }
         };
 
         var log_trace = function () {
-            JL().trace("Trace message");
+            try {
+                doesnotexist();
+            } catch (e) {
+                JL().trace({msg: "Trace message", errorMsg: e});
+            }
         };
 
         var log_warn = function () {
-            JL().warn("Warn message");
+            try {
+                doesnotexist();
+            } catch (e) {
+                JL().warn({msg: "Warn message", errorMsg: e});
+            }
         };
 
     </script>

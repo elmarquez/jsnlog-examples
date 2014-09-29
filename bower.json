@@ -26,6 +26,7 @@
   ],
   "dependencies": {
     "angular": "~1.2.25",
-    "jsnlog": "~2.7.5"
+    "jsnlog": "~2.7.5",
+    "node-uuid": "~1.4.1"
   }
 }
